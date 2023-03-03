@@ -1,4 +1,3 @@
--- Active: 1677580942812@@127.0.0.1@3306@assign2
 CREATE DATABASE assign2;
 USE assign2;
 
@@ -94,3 +93,4 @@ from employee_details_table
 JOIN employee_salary_table
 on employee_details_table.employee_id = employee_salary_table.employee_id
 and (employee_salary_table.employee_code = "" or employee_salary_table.employee_code = NULL);
+

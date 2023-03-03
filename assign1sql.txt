@@ -1,4 +1,3 @@
-show DATABASES;
 use assign1mysql;
 
 -- Defining and creating table team.
@@ -61,4 +60,5 @@ tm2.teamName as t2N, tm2.teamCaptain as t2C
 from team as tm1, team as tm2) as tteam
 on f.team1 = tteam.t1N and f.team2 = tteam.t2N
 ORDER BY f.team1;
+
 
