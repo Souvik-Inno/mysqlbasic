@@ -1,9 +1,8 @@
 -- Active: 1677580942812@@127.0.0.1@3306@assign2
 CREATE DATABASE assign2;
-show databases;
 USE assign2;
 
--- Creating table em
+-- Creating tables as provided.
 create Table employee_code_table(
   employee_code VARCHAR(255),
   employee_code_name VARCHAR(255),
@@ -25,15 +24,29 @@ CREATE Table employee_details_table(
   PRIMARY KEY (employee_id)
 );
 
-show TABLES;
-
+-- Inserting values in table.
 INSERT into employee_code_table (employee_code, employee_code_name, employee_domain)
-VALUES ("RU001", "su_rohit", "Java");
+VALUES ("su_rohit", "ru_rohit", "Java");
+INSERT into employee_code_table (employee_code, employee_code_name, employee_domain)
+VALUES ("su_mohit", "du_mohit", "C++");
+INSERT into employee_code_table (employee_code, employee_code_name, employee_domain)
+VALUES ("su_jack", "tu_jack", "Python");
 
-select * from employee_salary_table;
-select * from employee_details_table;
-select * from employee_code_table;
+INSERT into employee_salary_table (employee_id, employee_salary, employee_code)
+VALUES ("RU001", "40k", "su_rohit");
+INSERT into employee_salary_table (employee_id, employee_salary, employee_code)
+VALUES ("RU002", "80k", "su_mohit");
+INSERT into employee_salary_table (employee_id, employee_salary, employee_code)
+VALUES ("RU003", "60k", "su_jack");
 
+INSERT into employee_details_table (employee_id, employee_first_name, employee_last_name, graduation_percentage)
+VALUES ("RU001", "Rohit", "Singh", "60%");
+INSERT into employee_details_table (employee_id, employee_first_name, employee_last_name, graduation_percentage)
+VALUES ("RU002", "Mohit", "Singh", "80%");
+INSERT into employee_details_table (employee_id, employee_first_name, employee_last_name, graduation_percentage)
+VALUES ("RU003", "Jack", "Singh", "40%");
+
+-- Assignment queries start.
 -- WAQ to list all employee first name with salary greater than 50k.
 select employee_details_table.employee_first_name, employee_salary_table.employee_salary
 from employee_details_table

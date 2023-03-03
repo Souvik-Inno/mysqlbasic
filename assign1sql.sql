@@ -25,13 +25,13 @@ create table fixture(
 );
 
 -- Inserting values into team table.
-INSERT INTO team (`teamName`, `teamCaptain`)
+INSERT INTO team (teamName, teamCaptain)
 VALUES("A", "AC");
-INSERT INTO team (`teamName`, `teamCaptain`)
+INSERT INTO team (teamName, teamCaptain)
 VALUES("B", "BC");
-INSERT INTO team (`teamName`, `teamCaptain`)
+INSERT INTO team (teamName, teamCaptain)
 VALUES("C", "CC");
-INSERT INTO team (`teamName`, `teamCaptain`)
+INSERT INTO team (teamName, teamCaptain)
 VALUES("D", "DC");
 
 -- Insert values into fixture table.
@@ -53,19 +53,12 @@ ORDER BY f.team1;
 
 -- Showing fixture using join.
 select f.venue, f.matchDate, f.team1, f.team2, tteam.t1C, 
-tteam.t2C, f.tosswinner, f.`matchWinner`
+tteam.t2C, f.tosswinner, f.matchWinner
 from fixture as f
 left JOIN
-(select tm1.`teamName` as t1N, tm1.`teamCaptain` as t1C,
-tm2.`teamName` as t2N, tm2.`teamCaptain` as t2C
+(select tm1.teamName as t1N, tm1.teamCaptain as t1C,
+tm2.teamName as t2N, tm2.teamCaptain as t2C
 from team as tm1, team as tm2) as tteam
 on f.team1 = tteam.t1N and f.team2 = tteam.t2N
 ORDER BY f.team1;
-
--- Show values in team.
-select tm1.`teamName` as t1N, tm1.`teamCaptain` as t1C,
-tm2.`teamName` as t2N, tm2.`teamCaptain` as t2C
-from team as tm1, team as tm2
-where tm1.`teamName` <> tm2.`teamName`
-ORDER BY t1N;
 
