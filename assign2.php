@@ -93,7 +93,6 @@
     </div>
   </div>
 
-
   <!-- Optional JavaScript. -->
   <!-- JQuery first, then Popper.js, then Bootstrap JS. -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -108,7 +107,45 @@
 
   <!-- Including jquery code. -->
   <script>
-    
+    // Full Form validation.
+    var alphabetRegex = /^[a-zA-Z]+$/;
+    $(".assignForm").submit(function (event) {
+      var inputFirstName = $("input[name='inputFirstName']").val();
+      var inputLastName = $("input[name='inputLastName']").val();
+      var inputGradPercent = $("input[name='inputGradPercent']").val();
+      var inputSalary = $("input[name='inputSalary']").val();
+      var inputCodeName = $("input[name='inputCodeName']").val();
+      var inputDomain = $("input[name='inputDomain']").val();
+
+      if (!inputFirstName) {
+        alert("First Name is Required!");
+        event.preventDefault();
+      }
+      else if (!inputLastName) {
+        alert("last Name is Required!");
+        event.preventDefault();
+      }
+      else if (!alphabetRegex.test(inputFirstName) || !alphabetRegex.test(inputLastName)) {
+        alert("Name should contain alphabets only");
+        event.preventDefault();
+      }
+      else if (!inputGradPercent || inputGradPercent.length > 4) {
+        alert("Give correct Graduation percentage");
+        event.preventDefault();
+      }
+      else if (!inputSalary) {
+        alert("Salary is Required!");
+        event.preventDefault();
+      }
+      else if (!inputCodeName) {
+        alert("Code Name is Required!");
+        event.preventDefault();
+      }
+      else if (!inputDomain) {
+        alert("Domain Name is Required!");
+        event.preventDefault();
+      }
+    });
   </script>
 </body>
 
