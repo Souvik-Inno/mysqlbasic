@@ -6,6 +6,7 @@
   if (isset($_POST['formSubmit'])) {
     if ($formData->errorCheck()) {
       $formData->storeDB();
+      header("location: showQuery.php");
     }
   }
 ?>

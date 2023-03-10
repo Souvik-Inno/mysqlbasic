@@ -77,8 +77,35 @@
         $this->inputDomain = $_POST['inputDomain'];
         $this->empId = $this->autoincemp();
         $this->empCode = "su_" . $_POST['inputFirstName'];
+        $this->createTables();
       }
-      
+    }
+
+    public function createTables() {
+      $this->connectDB();
+      $query1 = "CREATE TABLE IF NOT EXISTS employee_code_table(
+        employee_code VARCHAR(255),
+        employee_code_name VARCHAR(255),
+        employee_domain VARCHAR(255),
+        PRIMARY KEY (employee_code)
+      );";
+      $query2 = "CREATE TABLE IF NOT EXISTS employee_salary_table(
+        employee_id VARCHAR(255),
+        employee_salary VARCHAR(3),
+        employee_code VARCHAR(255),
+        PRIMARY KEY (employee_id),
+        Foreign Key (employee_code) REFERENCES employee_code_table(employee_code)
+      );";
+      $query3 = "CREATE Table IF NOT EXISTS employee_details_table(
+        employee_id VARCHAR(255),
+        employee_first_name VARCHAR(255),
+        employee_last_name VARCHAR(255),
+        graduation_percentage VARCHAR(3),
+        PRIMARY KEY (employee_id)
+      );";
+      $query = $query1 . $query2 . $query3;
+      $stmt = $this->conn->prepare($query);
+      $stmt->execute();
     }
 
     /**

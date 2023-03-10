@@ -82,3 +82,16 @@ body {
   justify-content: center;
   gap: 20px;
 }
+
+/* table css */
+table {
+  width: 50%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+table td,
+th {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
