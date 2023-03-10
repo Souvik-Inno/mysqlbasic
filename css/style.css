@@ -1,0 +1,97 @@
+/* css root variables */
+:root {
+  --fs-base: 18px;
+  --fs-14: 0.875rem;
+  --fs-20: 1.25rem;
+  --fs-64: 4.25rem;
+}
+
+/* base declaration */
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-weight: 300;
+  font-size: var(--fs-base);
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* Global classes */
+.container {
+  max-width: 1148px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container-form {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container-shrimp {
+  max-width: 550px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px;
+  border: solid 1px black;
+  border-radius: 25px;
+}
+.bg-image {
+  background: url('../images/formbgimage.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 100%;
+}
+.blur-container {
+  color: white;
+  backdrop-filter: blur(8px);
+  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 25px;
+}
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+.container-extend {
+  margin: 0 -15px;
+}
+.flex-wrapper {
+  display: flex;
+}
+.flex-just-mid {
+  display: flex;
+  justify-content: center;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* table css */
+table {
+  width: 50%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+table td,
+th {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
