@@ -192,12 +192,8 @@
           echo "</tr>";
         }?>
       </table>
-      <?php
-    ?>
   </div>
-
-
-  <script src="" async defer></script>
 </body>
 
 </html>
+
